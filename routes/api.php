@@ -16,3 +16,4 @@ Route::get('/students/{id}', [StudentController::class, 'show']);
 Route::delete('/students/{id}', [StudentController::class, 'destroy']);
 
 Route::get('/enrollments',[EnrollmentController::class, 'index']);
+Route::get('/students-with-enrollments', [StudentController::class, 'withEnrollments']);

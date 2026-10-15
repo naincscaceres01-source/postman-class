@@ -11,6 +11,8 @@ class EnrollmentController extends Controller
 {
     public function index()
     {
-        return response()->json(Enrollment::all(), 200);
+        $enrollments = Enrollment::whit('studen')->get();
+        return response()->json($enrollment);
+
     }
 }
