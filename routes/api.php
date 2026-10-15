@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Api\EnrollmentController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -11,3 +12,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/students', [StudentController::class, 'index']);
 Route::post('/students', [StudentController::class, 'store']);
+Route::get('/students/{id}', [StudentController::class, 'show']);
+Route::delete('/students/{id}', [StudentController::class, 'destroy']);
+
+Route::get('/enrollments',[EnrollmentController::class, 'index']);
